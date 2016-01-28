@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title> <% include partials/header.ejs %>
+<script src="/js/angularJS/search_details.js"></script>
+
+<% include partials/header.ejs %>
+</head>
+<body ng-app="init" ng-controller="search"
+	ng-init="init ('<%= searchText %>')">
+	<% include partials/top_navBar.ejs %>
+
+	<div class="wrapper">
+
+
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+				<div class="panel panel-default dSearchPanel">
+					<div class="panel-heading">
+						<h4>Users</h4>
+					</div>
+
+					<div class="panel-body">
+						<div ng-repeat=" user in userData">
+							<h5>
+								<a href="/userTimelineM?username={{ user.userId}}">
+									{{user.firstName+' '+user.lastName }}</a>
+							</h5>
+						</div>
+						<br>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-10">
+			<div class="panel panel-default dSearchPanel">
+				<div class="panel-heading">
+					<h4>Groups</h4>
+				</div>
+
+				<div class="panel-body">
+					<div ng-repeat=" group in groupData">
+						<h5>
+							<a href="/groupInfoPageM?group_id={{ group.groupId }}">
+								{{group.groupName}}</a>
+						</h5>
+						<br>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

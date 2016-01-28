@@ -1,0 +1,98 @@
+
+
+<html>
+<head>
+<!--  Including header files -->
+<% include partials/header.ejs %>
+<script src="/js/angularJS/frnd_lst.js"></script>
+</head>
+
+<body ng-app="frnd_lst">
+	<% include partials/top_navBar.ejs %>
+	<div class="row" style="padding-left: 25px"
+		ng-controller="frnd_lst_cntrlr">
+		<% include partials/timeline_header.ejs %>
+
+		<div class="container">
+
+			<div class="panel with-nav-tabs panel-default col-md-9 _ml10">
+				<div class="panel-heading">
+					<ul id="friendsTabs" class="nav nav-tabs">
+						<li class="active"><a href="#tab1default" data-toggle="tab">Friends</a></li>
+						<li><a href="#tab2default" data-toggle="tab">Pending
+								Request</a></li>
+					</ul>
+				</div>
+				<div class="panel-body">
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="tab1default">
+							<div class="thumbnail col-md-6 frnds_lst_panel_pding"
+								ng-repeat="f in f_lst">
+
+								<div class="col-md-1 frnds_lst_img_hgt _p0">
+									<img src="./img/profile-photo.jpg" alt="profile pic"
+										class="frnds_lst_img_hgt">
+								</div>
+
+								<div class="col-md-6 frnds_lst_href_hgt _m0 _p0">
+									<p>
+										<a class="frnds_lst_href_fnt" href="#">{{f.name}}</a>
+									</p>
+								</div>
+
+
+								<div class="col-md-2 frnds_lst_btn_hgt">
+
+									<p>
+										<a href="#" class="btn frnds_lst_btn_trnsperncy" role="button"
+											ng-show={{f.isFriend}}>Friend</a> <a href="#"
+											class="btn frnds_lst_btn_trnsperncy" role="button"
+											ng-hide={{f.isFriend}}>Sent Request</a>
+									</p>
+
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-pane fade in" id="tab2default">
+							<div class="thumbnail col-md-7 frnds_lst_panel_pding"
+								ng-repeat="f in pendinglist">
+
+								<div class="col-md-1 frnds_lst_img_hgt _p0">
+									<img src="./img/profile-photo.jpg" alt="profile pic"
+										class="frnds_lst_img_hgt">
+								</div>
+
+								<div class="col-md-6 frnds_lst_href_hgt _m0 _p0">
+									<p>
+										<a class="frnds_lst_href_fnt" href="#">{{f.name}}</a>
+									</p>
+								</div>
+
+
+								<div class="col-md-2 frnds_lst_btn_hgt">
+
+									<p>
+										<a href="#" class="btn btn-success" role="button"
+											ng-click="acceptRequest(f)">Accept</a> <a href="#"
+											class="btn btn-danger" role="button"
+											ng-click="declinedRequest(f)">Ignore</a>
+									</p>
+
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+
+</html>

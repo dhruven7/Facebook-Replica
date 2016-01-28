@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Timeline</title> <% include partials/header.ejs %>
+<script src="/js/angularJS/posts_timeline.js"></script>
+</head>
+<body>
+	<% include partials/top_navBar.ejs %> <% include
+	partials/timeline_header.ejs %>
+	<div class="wrapper" ng-app="init" ng-controller="status">
+
+
+
+		<div class="row">
+			<div class="col-md-3">
+				<br>
+				<div class="col-centered dnamepanel">
+					<h3>{{ wholeName }}</h3>
+				</div>
+				<div class="well-col-5 dInfoPanel">
+
+					<label class="glyphicon glyphicon-briefcase"></label> <label>Works
+						at {{ companyName }} </label> <br />
+					<br /> <label class="glyphicon glyphicon-education"></label> <label>Studies
+						at<br> {{schoolName}}
+					</label> <br />
+					<br /> <label class="glyphicon glyphicon-globe"></label> <label>Lives
+						in {{city}}, {{country}} </label>
+
+				</div>
+
+
+			</div>
+			<div class="col-md-6">
+				<div class="well dStatusPanel">
+					<form name="addStatusTimeline" novalidate>
+						<div class="form-group" style="padding: 8px;">
+							<textarea class="form-control" name="post" ng-model="post"
+								placeholder="Update your status" required></textarea>
+							<span style="color: red"
+								ng-show="addStatusTimeline.post.$dirty && addStatusTimeline.post.$invalid">
+								<span ng-show="addStatusTimeline.post.$error.required">Please
+									enter something to post!</span>
+							</span>
+						</div>
+						<button class="btn btn-primary pull-right" type="button"
+							ng-click="validate($event)">Post</button>
+						<br>
+					</form>
+				</div>
+
+				<div class="panel panel-default  dNewsfeedPanel">
+					<div class="panel-heading">
+						<h4>News Feed</h4>
+					</div>
+
+					<div class="panel-body">
+						<div class="list-group" ng-repeat="k in posts">
+							<h5>
+								<a href="#">{{ wholeName }}</a>
+							</h5>
+							<br>
+							<p>{{k.postText}}</p>
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>
+</body>
+</html>

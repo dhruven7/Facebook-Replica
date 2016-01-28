@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<meta name="generator" content="#" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+<% include partials/header.ejs %>
+<script src="js/scripts.js"></script>
+<script src="js/angularJS/posts.js"></script>
+<script src="js/angularJS/leftbar.js"></script>
+<script src="js/SessionCheck.js"></script>
+</head>
+
+<body ng-app="init">
+	<% include partials/top_navBar.ejs %>
+	<div class="row row-offcanvas row-offcanvas-left">
+		<div class="col-md-2"><% include partials/leftbar.ejs%></div>
+		<div class="col-md-8" id="main" ng-controller="status">
+
+			<!-- <div class="full col-sm-9" style="padding-left: 0px;"> -->
+			<div class="col-md-10">
+				<div class="row">
+					<div class="well mStatusPanel _mtr10">
+
+						<h4>Update status</h4>
+						<br>
+						<form name="addStatus">
+							<textarea class="form-control" rows="3" name="post"
+								ng-model="post" placeholder="What's on your mind?" required></textarea>
+							<span style="color: green"
+								ng-show="addStatus.post.$dirty && addStatus.post.$invalid">
+								<span ng-show="addStatus.post.$error.required">Add
+									something to post!</span>
+							</span> <br>
+						</form>
+						<button class="btn btn-primary pull-right" type="button"
+							ng-click="validate($event)">Post</button>
+						<br> <br>
+
+					</div>
+
+
+					<div class="panel panel-default mNewsfeedPanel">
+						<div class="panel-heading">
+							<h4>News Feed</h4>
+						</div>
+
+						<div class="panel-body">
+							<div class="row" ng-repeat="k in posts">
+
+								<div class="col-md-1">
+									<img src="./img/profile-photo.jpg" class="navbar_profile_pic"
+										alt="profile pic">
+								</div>
+								<div class="col-md-7" style="margin: 0px 0px 0px -25px;">
+									<h5>
+										<a href="#">{{k.user}}</a>
+									</h5>
+								</div>
+								<div class="col-md-10">
+									<br>
+									<p style="margin-left: -70px;">{{k.postText}}</p>
+								</div>
+
+								<hr class="custom_hr">
+								<br> <br>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+</body>
+</html>

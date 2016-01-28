@@ -1,0 +1,91 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+
+.login{
+    background-color: #3b5998;
+    padding-top: 20px;
+}
+
+._p0{
+    padding:0px;
+}
+
+._pr20{
+    padding-right: 20px;
+}
+
+._ptb10{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+._ptb20{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+._m0{
+    margin: 0px;
+}
+
+._m10{
+     margin:10px;
+}
+
+._ml10{
+    margin-left: 10px;
+}
+
+._mtr10{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+.btn-primary-login{
+    background-color: #5b74a8 !important;
+    border-radius: 0px;
+}
+
+.btn-primary-login:hover{
+    background-position: bottom;
+}
+
+.login-text{
+    font-weight: normal !important;
+    color: #fff;
+}
+
+.login-heading{
+    color: #333333;
+}
+
+.no-top-margin{
+    margin-top:0px;
+    color: #9daccb;
+}
+
+.normal-font{
+    font-weight: normal;
+}
+
+.login-top-margin-no-padding{
+    margin-top:1px;
+}
+
+.groupmember_lst_img_hgt{
+    width: 32px; 
+    height: 32px;
+}
+.groupmember_lst_href_fnt{
+    color: #3b5998;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.groupmember_lst_panel_margin{
+    
+    margin:8px;   
+}
+

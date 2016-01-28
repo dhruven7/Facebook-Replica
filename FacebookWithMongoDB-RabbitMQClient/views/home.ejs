@@ -1,0 +1,206 @@
+<html>
+  <head>
+  <title>Facebook</title>
+     <% include partials/header.ejs %>
+     <script src="/js/angularJS/login.js"></script>
+  </head>
+  <body ng-app="login">  
+      <div>
+      
+<form action="/loginM" method="post" class="fb_bgcolor login">
+	<!-- This panel is for login -->
+	<!-- Default panel contents -->
+
+	<input type="hidden" name="firstLogIn" value="no">
+	<div>
+		<section>
+			<div class="col-xs-6"></div>
+			<div class="col-xs-2 ">
+				<label class="login-text">Email </label>
+			</div>
+			<div class="col-xs-2">
+				<label class="login-text">Password</label>
+			</div>
+			<div class="col-xs-2"></div>
+		</section>
+		<form class="form-vertical" role="form">
+			<div class="col-xs-6">
+				<a href="/"><img src="" /></a>
+			</div>
+			<div class="col-xs-2 usernameDiv">
+
+				<input type="email" class="form-control" name="emailId"
+					id="username" placeholder="Email Id">
+
+			</div>
+			<div class="col-xs-2 usernameDiv">
+
+				<input type="password" class="form-control" name="password"
+					id="password" placeholder="Password">
+			</div>
+			<div class="col-xs-2 ">
+				<div class="pull-left signIn">
+					<button type="submit" class="btn btn-primary btn-primary-login">Sign in</button>
+				</div>
+			</div>
+		</form>
+		<section class="row">
+			<div class="col-xs-6"></div>
+			<div class="col-xs-2 login-top-margin-no-padding">
+				<div class="checkbox no-top-margin">
+					<label> <input type="checkbox">Keep me logged in
+					</label>
+				</div>
+			</div>
+			<div class="col-xs-2 login-top-margin-no-padding">
+				<a href="/" style="color: #9daccb"> <label class="normal-font">Forgot your
+						password? </label>
+				</a>
+			</div>
+			<div class="col-xs-2"></div>
+		</section>
+	</div>
+	</div>
+</form>
+      
+      </div>
+      <div>
+      <div style="background: #EDF0F5">
+	<div style="padding-left:10%; padding-right:10%;">
+		<div class="col-xs-6">
+		
+		<div style="padding:10px;">
+	<h2 class="login-heading"><b>Connect with friends and <br>the world around you</b></h2>
+	
+	<div class="login-heading _ptb10" style="">
+		<img class="img" src="/img/document.png" alt="Documents" style="width:55px;"/>
+		<span><b>    See photos and updates</b>  from friends in News Feed.</span>
+	</div>
+	
+	<div  class="login-heading _ptb10">
+		<img class="img" src="/img/share_new.png" alt="Documents" style="width:55px;"/>
+		<span><b>	   Share what's new in your life. </span>
+	</div>
+	
+	<div class="login-heading _ptb10">
+		<img class="img" src="/img/connections.png" alt="Documents" style="width:55px;"/>
+		<span><b>	   Find much more</b>  with us. </span>
+	</div>
+</div>
+		
+		</div>
+		
+		
+		<div class="col-xs-6">
+			
+		
+			
+<h2 class="login-heading">
+	Sign Up..It's free!!</h2>
+
+
+<form ng-app="login" action="/registerM" method="post" class="afterSignUp"
+	name="signUpForm" ng-controller="signup" novalidate>
+	<form class="form-horizontal" role="form" name="signUpForm">
+		<div class="form-group  _ptb20">
+
+			<div class="col-sm-6 _p0 _pr20">
+				<input type="text" class="form-control" name="inputFirstName" ng-model="inputFirstName"
+					id="inputFirstName" placeholder="First Name" required>
+				<span style="color:green" ng-show="signUpForm.inputFirstName.$dirty && signUpForm.inputFirstName.$invalid">
+  					<span ng-show="signUpForm.inputFirstName.$error.required">First Name is required.</span>
+  				</span>	
+			</div>
+			<div class="col-sm-6 _p0">
+				<input type="text" class="form-control" name="inputLastName" ng-model="inputLastName"
+					id="inputLastName" placeholder="Last Name" required>
+				<span style="color:green" ng-show="signUpForm.inputLastName.$dirty && signUpForm.inputLastName.$invalid">
+  					<span ng-show="signUpForm.inputLastName.$error.required">Last Name is required.</span>
+  				</span>
+			</div>
+		</div>
+		<div class="form-group  _ptb20 ">
+			<div class="col-sm-12 _p0">
+				<input type="email" class="form-control" ng-model="inputUsername"
+					name="inputUsername" id="inputUsername" placeholder="E-mail"
+					ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+
+				
+				<span style="color:green" ng-show="signUpForm.inputUsername.$dirty && signUpForm.inputUsername.$invalid">
+					<span ng-show="signUpForm.inputUsername.$error.required">Email is required.</span>
+					<span style="color:green" ng-show="signUpForm.inputUsername.$error.pattern"> Invalid Email Address</span>
+				</span>
+					
+
+			</div>
+		</div>
+
+		<div class="form-group  _ptb20 ">
+			<div class="col-sm-12 _p0">
+				<input type="email" class="form-control" ng-model="inputReUsername"
+					name="inputReUsername" id="inputReUsername"
+					ng-pattern="inputUsername" placeholder="Re Enter E-mail" required> 
+				<span style="color:green" ng-show="signUpForm.inputReUsername.$dirty && signUpForm.inputReUsername.$invalid">
+					<span style="color:green" ng-show="signUpForm.inputReUsername.$error.required">Re-enter Email Id!</span>
+					<span style="color:green" ng-show="signUpForm.inputReUsername.$error.pattern"> Email need to match</span>
+				</span>	
+
+			</div>
+		</div>
+
+		<div class="form-group  _ptb20 ">
+			<div class="col-sm-12 _p0">
+				<input type="password" class="form-control" name="inputPassword" ng-model="inputPassword"
+					ng-pattern="/(?=^.{6,}$)/" id="inputPassword" placeholder="Password" required>
+				<span style="color:green" ng-show="signUpForm.inputPassword.$dirty && signUpForm.inputPassword.$invalid">
+					<span ng-show="signUpForm.inputPassword.$error.required">Password is required.</span>
+					<span style="color:green" ng-show="signUpForm.inputPassword.$error.pattern"> Password should contain at least 6 characters</span>
+				</span>	
+			</div>
+		</div>
+
+		<div class="form-group  _ptb20 ">
+			<div class="col-sm-12 _p0">
+				<div>Birthdate:</div>
+				<div class='input-group date' id='datetimepicker1'>
+					<input type="date" class="form-control" name="inputDOB" ng-model="inputDOB" required/> <span
+						class="input-group-addon"> <span
+						class="glyphicon glyphicon-calendar"></span>
+					</span>
+					<span style="color:green" ng-show="signUpForm.inputDOB.$dirty && signUpForm.inputDOB.$invalid">
+						<span ng-show="signUpForm.inputDOB.$error.required">Birth date is required</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group  _ptb20 ">
+			<div class="col-sm-12 _p0">
+				<div>Gender: </div>
+				<label class="radio-inline"> <input type="radio"
+					name="gender" value="Male" checked>Male
+				</label> <label class="radio-inline"> <input type="radio"
+					name="gender" value="Female">Female
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group _ptb20">
+			<div class="pull-left signIn">
+				<input type="submit" class="btn btn-success btn-lg" ng-click="validate($event)" value="Sign Up">
+				<!-- ng-disabled="signUpForm.inputFirstName.$dirty && signUpForm.inputFirstName.$invalid ||
+				signUpForm.inputLastName.$dirty && signUpForm.inputLastName.$invalid ||
+				signUpForm.inputUsername.$dirty && signUpForm.inputUsername.$invalid ||
+				signUpForm.inputReUsername.$dirty && signUpForm.inputReUsername.$invalid ||
+				signUpForm.inputPassword.$dirty && signUpForm.inputPassword.$invalid ||
+				signUpForm.inputDOB.$dirty && signUpForm.inputDOB.$invalid" -->
+			</div>
+		</div>
+	</form>
+</form>
+		</div>
+	</div>
+</div>
+      </div>
+  </body>
+</html>

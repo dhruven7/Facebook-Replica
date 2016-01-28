@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+     <% include partials/header.ejs %>
+     <script src="/js/angularJS/addProfile.js"></script>
+  </head>
+  <body>
+  	<% include partials/top_navBar.ejs %>
+    <br/> <br/>
+    
+    <div class="container"  ng-app="profile" ng-controller="addProfileData"> 
+  	
+  		<div class="row">
+  			<div class="col-md-1"></div>
+  			<div  class="col-md-8">
+  				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title cpanel">Add your profile data</h3>
+					</div>
+					<div class="panel-body">
+					
+					<form action="addProfileM" method="post" class="form-horizontal" name="profileData" novalidate>
+					<div ng-hide="hideEducation">
+					  <div class="form-group">
+					   <h4 class="c-profileHeading">Education</h4>
+					    <label class="col-sm-2 control-label">School</label>
+					    <div class="col-sm-10">
+					    	<input type="text" class="form-control" name="schoolName" ng-model="schoolName" placeholder="Enter school name" required>
+					    	<span style="color:green" ng-show="profileData.schoolName.$dirty && profileData.schoolName.$invalid">
+								<span ng-show="profileData.schoolName.$error.required">School name is required</span>
+							</span>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="col-sm-2 control-label">Major</label>
+					    <div class="col-sm-10">
+					    	<input type="text" class="form-control" name="major" ng-model="major" placeholder="Enter major" required>
+					    	<span style="color:green" ng-show="profileData.major.$dirty && profileData.major.$invalid">
+								<span ng-show="profileData.major.$error.required">Major is required</span>
+							</span>
+					  	</div>
+					  </div>
+					  
+					  <div class="form-group">
+					    <label class="col-sm-2 control-label">Start Date</label>
+					    <div class="col-sm-10">
+					    	<input type="date" class="form-control" name="eStartDate" ng-model="eStartDate" required>
+					    	<span style="color:green" ng-show="profileData.eStartDate.$dirty && profileData.eStartDate.$invalid">
+								<span ng-show="profileData.eStartDate.$error.required">Start Date is required</span>
+							</span>
+					  	</div>
+					  </div>
+					  
+					  <div class="form-group">
+					    <label class="col-sm-2 control-label">End Date</label>
+					    <div class="col-sm-10">
+					    	<input type="date" class="form-control" name="eEndDate" ng-model="eEndDate" required>
+					    	<span style="color:green" ng-show="profileData.eEndDate.$dirty && profileData.eEndDate.$invalid">
+								<span ng-show="profileData.eEndDate.$error.required">End Date is required</span>
+							</span>
+					  	</div>
+					  </div>
+					 	<div class="text-right">
+					   <button type="button" class="btn btn-success" ng-click="validWork($event)">Next</button>
+					   </div>
+					</div>
+					
+					<div ng-hide="hideWork">
+					  <div class="form-group">
+					   <h4 class="c-profileHeading">Work</h4>
+					    <label class="col-sm-2 control-label">Company</label>
+					    
+					     <div class="col-sm-10">
+					     	<input type="text" class="form-control" name="companyName" ng-model="companyName" placeholder="Enter company name" required>
+					     	<span style="color:green" ng-show="profileData.companyName.$dirty && profileData.companyName.$invalid">
+								<span ng-show="profileData.companyName.$error.required">Company name is required</span>
+							</span>
+					     </div>
+					  </div>
+					  <div class="form-group">
+					    <label  class="col-sm-2 control-label">Position</label>
+					     <div class="col-sm-10">
+					    	<input type="text" class="form-control" name="position" ng-model="position" placeholder="Enter position" required>
+					    	<span style="color:green" ng-show="profileData.position.$dirty && profileData.position.$invalid">
+								<span ng-show="profileData.position.$error.required">Position is required</span>
+							</span>
+					    </div>
+					  </div>
+					  
+					   <div class="form-group">
+					    <label class="col-sm-2 control-label">Start Date</label>
+					    <div class="col-sm-10">
+					    	<input type="date" class="form-control" name="wStartDate" ng-model="wStartDate" required>
+					    	<span style="color:green" ng-show="profileData.wStartDate.$dirty && profileData.wStartDate.$invalid">
+								<span ng-show="profileData.wStartDate.$error.required">Start Date is required</span>
+							</span>
+					  	</div>
+					  </div>
+					  
+					  <div class="form-group">
+					    <label class="col-sm-2 control-label">End Date</label>
+					    <div class="col-sm-10">
+					    	<input type="date" class="form-control" name="wEndDate" ng-model="wEndDate" required>
+					    	<span style="color:green" ng-show="profileData.wEndDate.$dirty && profileData.wEndDate.$invalid">
+								<span ng-show="profileData.wEndDate.$error.required">End Date is required</span>
+							</span>
+					  	</div>
+					  </div>
+					  <div class="text-right">
+					   <button type="button" class="btn btn-success" ng-click="validInterests($event)">Next</button>
+					   </div>
+					</div>
+					
+					<div ng-hide="hideInterests">
+						<div class="form-group">
+						<h4 class="c-profileHeading">Interests</h4>
+							<label class="col-sm-2 control-label">Music </label>
+							<div class="col-sm-10">
+								<textarea rows="5" cols="65" name="music" ng-model="music" required></textarea>
+								<span style="color:green" ng-show="profileData.music.$dirty && profileData.music.$invalid">
+								<span ng-show="profileData.music.$error.required">Interest - Music is required</span>
+							</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Sports </label>
+							<div class="col-sm-10">
+								<textarea rows="5" cols="65" name="sports" ng-model="sports" required></textarea>
+								<span style="color:green" ng-show="profileData.sports.$dirty && profileData.sports.$invalid">
+								<span ng-show="profileData.sports.$error.required">Interest - Sports is required</span>
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Shows </label>
+							<div class="col-sm-10">
+								<textarea rows="5" cols="65" name="shows" ng-model="shows" required></textarea>
+								<span style="color:green" ng-show="profileData.shows.$dirty && profileData.shows.$invalid">
+								<span ng-show="profileData.shows.$error.required">Interest - Shows is required</span>
+								</span>
+							</div>
+						</div>
+						 <div class="text-right">
+					   		<button type="button" class="btn btn-success" ng-click="validOther($event)">Next</button>
+					   </div>
+					</div>
+					
+	     			<div ng-hide="hideOther">
+	     			<div class="form-group">
+	     			<h4 class="c-profileHeading">Other</h4>
+							<label class="col-sm-2 control-label">Relationship</label>
+							<div class="col-sm-10">
+									  
+									  <select class="form-control" name="relationship">
+									    <option value="Single">Single</option>
+									    <option value="Committed">Committed</option>
+									    <option value="Married">Married</option>
+									    <option value="Divorced">Divorced</option>
+									  </select>
+								
+							</div>
+						</div>
+	     			
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Contact No: </label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="phoneNumber" ng-model="phoneNumber" placeholder="Enter phone number" required>
+								<span style="color:green" ng-show="profileData.phoneNumber.$dirty && profileData.phoneNumber.$invalid">
+								<span ng-show="profileData.phoneNumber.$error.required">Phone Number is required</span>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">City</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="city" ng-model="city" placeholder="Enter city" required>
+								<span style="color:green" ng-show="profileData.city.$dirty && profileData.city.$invalid">
+								<span ng-show="profileData.city.$error.required">City is required</span>
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Country</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="country" ng-model="country" placeholder="Enter country" required>
+								<span style="color:green" ng-show="profileData.country.$dirty && profileData.country.$invalid">
+								<span ng-show="profileData.country.$error.required">Country is required</span>
+								</span>
+							</div>
+						</div>
+						<div class="text-right">
+						<button type="submit" class="btn btn-primary" ng-click="validate($event)">Submit</button>
+						</div>
+						</div>
+
+					</form>
+					
+					</div>
+					
+					
+				</div>
+  			</div>
+  			<div class="col-md-3"></div>
+  		</div>
+  	</div>
+  </body>
+</html>

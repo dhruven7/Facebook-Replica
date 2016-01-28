@@ -1,0 +1,79 @@
+<html>
+<head>
+<% include partials/header.ejs %>
+<script src="/js/angularJS/login.js"></script>
+<script src="js/angularJS/about.js"></script>
+</head>
+<body ng-app="about" ng-controller="c-about">
+	<% include partials/top_navBar.ejs %> 
+	<% include partials/timeline_header.ejs %>
+	<br />
+	<br />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<img src="img/about.png" height="20" width="20" class="cpanel-img">
+						<h3 class="panel-title cpanel">About</h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-md-3">
+							<ul class="about-col-3 c-ul">
+
+								<li ng-click="cOverview()">Overview</li><br />
+								<li ng-click="cWork()">Work & Education</li><br />
+								<li ng-click="cRelation()">Relationship</li><br />
+								<li ng-click="cContact()">Contact Info</li><br />
+								<li ng-click="cInterests()">Interests</li><br />
+								<li ng-click="cLifeEvents()">Life Events</li>
+
+							</ul>
+						</div>
+						<div class="col-md-8">
+							<div ng-hide="c_work_education" class="well-col-5">
+								<label class="glyphicon glyphicon-briefcase"></label> <label>
+									{{ position }} at {{ companyName }} </label> <br /> <br /> <label
+									class="glyphicon glyphicon-education"></label> <label>Studies
+									{{ major }} at {{ schoolName }} </label>
+							</div>
+							<div ng-hide="c_relationship" class="well-col-5">
+								<label class="glyphicon glyphicon-heart"> </label> <label>
+									{{ relationship }}</label>
+							</div>
+							<div ng-hide="c_contact_info" class="well-col-5">
+								<label class="glyphicon glyphicon-envelope"></label> <label>
+									Email Id: {{ emailId }}</label> <br /> <br /> <label
+									class="glyphicon glyphicon-phone"></label> <label>
+									Phone: {{ phoneNumber }}</label> <br /> <br /> <label
+									class="glyphicon glyphicon-home"></label> <label>Lives
+									in {{ city }}, {{ country }} </label> <br />
+							</div>
+							<div ng-hide="c_interests" class="well-col-5">
+								<label class="glyphicon glyphicon-music"></label> <label>
+									Music: {{ music }}</label> <br /> <br /> <label
+									class="glyphicon glyphicon-film"></label> <label>
+									Shows: {{ shows }}</label> <br /> <br /> <label
+									class="glyphicon glyphicon-flag"></label> <label>Sports:
+									{{ sports }}</label> <br />
+							</div>
+							<div ng-hide="c_life_events" class="well-col-5">
+								<label>2015</label> <br /> <br /> <br /> <label
+									class="glyphicon glyphicon-education"></label> <label>Started
+									school at {{ schoolName }} </label> <br /> <br /> <label>2014</label>
+								<br /> <br /> <label class="glyphicon glyphicon-briefcase"></label>
+								<label>Started work at {{ companyName }}</label> <br /> <br />
+								<label>1992</label> <br /> <br /> <label
+									class="glyphicon glyphicon-calendar"></label> <label>Born
+									on {{ dateOfBirth }}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</body>
+</html>

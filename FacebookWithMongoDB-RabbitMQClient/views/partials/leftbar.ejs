@@ -1,0 +1,37 @@
+	<script src="js/angularJS/leftbar.js"></script>
+
+<div class="col-md-12 sidebar-offcanvas"
+	ng-controller="leftbar_list" id="sidebar">
+
+<ul class="nav hidden-xs" id="lg-menu">
+		<li class="active"><a href="/timelineM"><img class ="navbar_profile_pic" src="img/profile-photo.jpg"> {{Username}}</a></li>
+			</ul>
+				
+	<hr class="custom_hr">
+<ul class="nav hidden-xs">
+		<li><a href="#" onclick="javascript:window.location.href='/homepage'; return false;"><i class="glyphicon glyphicon-list-alt"></i>
+				NewsFeed</a></li>
+	</ul>
+<br>
+<hr class="custom_hr">
+	<ul class="nav hidden-xs">
+		<li><a href="/groups"><i class="glyphicon glyphicon-list-alt"></i>Groups</a></li>
+		<li ng-repeat="item in groupTopList" class="_p0 list-group-item"
+			ng-click="navigateToGroup(item)"><a href=""><i class="glyphicon glyphicon-list-alt"></i> {{ item.groupName }}</a></li>
+		<li class="_p0 list-group-item"	data-toggle="modal" ng-click="getFrienList()" data-target="#createGroup"><a href=""><i
+				class="glyphicon glyphicon-plus"></i> Create New Group </a></li>
+	</ul>
+	<% include ../createGroup.ejs  %>
+	
+	<ul class="nav visible-xs" id="xs-menu">
+		<li><a href="#featured" class="text-center"><i
+				class="glyphicon glyphicon-list-alt"></i></a></li>
+		<li><a href="#stories" class="text-center"><i
+				class="glyphicon glyphicon-list"></i></a></li>
+		<li><a href="#" class="text-center"><i
+				class="glyphicon glyphicon-list-alt"></i></a></li>
+		<li><a href="#" class="text-center"><i
+				class="glyphicon glyphicon-refresh"></i></a></li>
+	</ul>
+
+</div>

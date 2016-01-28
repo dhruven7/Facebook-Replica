@@ -1,0 +1,91 @@
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.fb_bgcolor{
+	
+	background-color: #3b5998;
+	
+}
+
+.setLoginHght{
+	
+	height: 82px;
+	
+}
+
+
+.setNavBarHght{
+	
+	height: 52px;
+	
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+
+.srchbar_padding{
+	padding-top: 8px;	
+}
+
+.navbar_scndhlf_paddding{
+	padding-top: 8px;	
+}
+
+.navbar_btn_trnsperncy{
+	border-color: #ccc;	
+	background-color: Transparent;
+	border:none;
+	color:white;
+	
+}
+
+.navbar_btn_trnsperncy:hover{
+	background-color: #1c3d7f;
+	color:white;
+}
+
+.frnds_lst_btn_hgt{
+	padding-top: 30px;
+}
+
+.frnds_lst_href_hgt{
+	padding-top: 35px;
+}
+
+.frnds_lst_href_fnt{
+	font-weight: bold ; 
+	color: #3b5998;
+	margin-left: 25px;
+}
+
+.frnds_lst_img_hgt{
+	width: 100px; 
+	height: 100px;
+}
+
+.frnds_lst_btn_trnsperncy{
+	border-color: #ccc;	
+	background-color: silver;
+	border:none;
+	color: black;
+}
+
+.frnds_lst_panel_pding{
+	
+	margin: 15px;	
+}

@@ -1,0 +1,14 @@
+{
+  "name": "RabbitMQ-MongoLoginApplication",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "amqp": "*",
+    "mongodb":"*",
+    "mongoose":"*",
+    "mongoose-auto-increment": "*"
+  }
+}

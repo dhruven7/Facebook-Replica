@@ -1,0 +1,24 @@
+.cpanel{
+	display: inline !important;
+    font-size: 20px;
+}
+.about-col-3{
+	display: inline;
+}
+.c-ul{
+	list-style-type: none;
+	font-size: 18px;
+}
+.cpanel-img{
+	margin: -6px 5px 0px 0px;
+}
+.border-line{
+	border-right: 1px solid #333;
+}
+.well-col-5{
+	top: 25px;
+}
+
+.c-profileHeading{
+	margin-left: 15px;
+}

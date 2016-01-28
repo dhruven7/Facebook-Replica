@@ -1,0 +1,23 @@
+<div class="container" >
+ 
+	<div class="panel panel-default">
+	
+		<nav class="navbar navbar-default">	
+			<p style="margin-left: 10px; margin-top: 15px; font-weight: bold;">Do you know this connection ?</p>
+		</nav >
+		
+	
+  		<div class="panel-body">
+    		Explore this connection
+  		
+  			<button type="button" class="btn btn-success" style="float: right;" ng-show="isRequestSent && isFriend" ng-click=addFrnd()>Add Friend</button>
+  			<button type="button" class="btn btn-primary" style="float: right;" ng-show={{isRequestSent}}>Friend Request Sent</button>
+  			<button type="button" class="btn btn-default" style="float: right;" ng-show={{isFriend}}">Friends</button>
+  		</div>
+  		
+	</div>  	
+ 
+ 
+</div>
+
+<script src="frnd_request.js"></script>
